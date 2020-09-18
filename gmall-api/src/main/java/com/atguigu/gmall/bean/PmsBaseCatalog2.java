@@ -24,8 +24,5 @@ public class PmsBaseCatalog2 implements Serializable {
     @Transient
     private List<PmsBaseCatalog3> catalog3List;
 
-    public List<PmsBaseCatalog3> getCatalog3List() {
-        return catalog3List;
-    }
 
 }

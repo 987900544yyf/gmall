@@ -3,9 +3,10 @@ package com.atguigu.gmall.bean;
 import lombok.Data;
 
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Data
-public class PmsBaseCatalog3 {
+public class PmsBaseCatalog3 implements Serializable {
 
     @Id
     private String id;
@@ -13,4 +14,6 @@ public class PmsBaseCatalog3 {
     private String name;
 
     private String catalog2Id;
+
 }
+
