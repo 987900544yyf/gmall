@@ -57,10 +57,7 @@ public class AttrServiceImpl implements AttrInfoService {
             for (PmsBaseAttrValue pmsBaseAttrValue : attrValueList) {
                 pmsBaseAttrValueMapper.insertSelective(pmsBaseAttrValue);
             }
-
         }
-
-
         return "success";
     }
 

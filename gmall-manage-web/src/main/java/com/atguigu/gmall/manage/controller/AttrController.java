@@ -31,6 +31,11 @@ public class AttrController {
     @RequestMapping("getAttrValueList")
     public List<PmsBaseAttrValue> getAttrValueList(String attrId) {
        return attrInfoService.getAttrValueList(attrId);
-
     }
+
+    @RequestMapping("deleteAttr")
+    public String deleteAttr() {
+        return "success";
+    }
+
 }
