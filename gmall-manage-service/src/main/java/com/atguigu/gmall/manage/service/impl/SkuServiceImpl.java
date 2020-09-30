@@ -11,6 +11,8 @@ import com.atguigu.gmall.manage.mapper.PmsSkuInfoMapper;
 import com.atguigu.gmall.manage.mapper.PmsSkuSaleAttrValueMapper;
 import com.atguigu.gmall.service.SkuService;
 import org.springframework.beans.factory.annotation.Autowired;
+import tk.mybatis.mapper.common.ExampleMapper;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,5 +73,24 @@ public class SkuServiceImpl implements SkuService {
             pmsSkuImageMapper.insertBatch(pmsSkuImageList);
         }
 
+
+
     }
+
+    @Override
+    public PmsSkuInfo getSkuById(String skuId) {
+
+        PmsSkuInfo pmsSkuInfo = new PmsSkuInfo();
+        pmsSkuInfo.setId(skuId);
+        PmsSkuInfo kuInfo = pmsSkuInfoMapper.selectOne(pmsSkuInfo);
+
+        PmsSkuImage pmsSkuImage = new PmsSkuImage();
+        Example example = new Example(PmsSkuImage.class);
+        example.createCriteria().andEqualTo("skuId",skuId);
+//        pmsSkuImage.setSkuId(skuId);
+        List<PmsSkuImage> imageList = pmsSkuImageMapper.selectByExample(example);
+        kuInfo.setSkuImageList(imageList);
+        return kuInfo;
+    }
+
 }
