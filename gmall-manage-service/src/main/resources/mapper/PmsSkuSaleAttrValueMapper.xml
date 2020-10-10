@@ -13,7 +13,4 @@
         </foreach>
     </insert>
 
-    <insert id ="">
-        Insert into pms_sku_image set values  foreign as cascade foreign values values between datetime_interval_precision
-    </insert>
 </mapper>

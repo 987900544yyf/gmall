@@ -11,7 +11,6 @@ import com.atguigu.gmall.manage.mapper.PmsSkuInfoMapper;
 import com.atguigu.gmall.manage.mapper.PmsSkuSaleAttrValueMapper;
 import com.atguigu.gmall.service.SkuService;
 import org.springframework.beans.factory.annotation.Autowired;
-import tk.mybatis.mapper.common.ExampleMapper;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.ArrayList;
@@ -72,9 +71,6 @@ public class SkuServiceImpl implements SkuService {
             }
             pmsSkuImageMapper.insertBatch(pmsSkuImageList);
         }
-
-
-
     }
 
     @Override

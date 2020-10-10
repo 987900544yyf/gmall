@@ -23,6 +23,8 @@ public class PmsProductSaleAttr implements Serializable {
     @Column
     String saleAttrName;
 
+    @Transient
+    String isChecked;
 
     @Transient
     List<PmsProductSaleAttrValue> spuSaleAttrValueList;
@@ -65,6 +67,14 @@ public class PmsProductSaleAttr implements Serializable {
 
     public void setSpuSaleAttrValueList(List<PmsProductSaleAttrValue> spuSaleAttrValueList) {
         this.spuSaleAttrValueList = spuSaleAttrValueList;
+    }
+
+    public String getIsChecked() {
+        return isChecked;
+    }
+
+    public void setIsChecked(String isChecked) {
+        this.isChecked = isChecked;
     }
 }
 
