@@ -46,11 +46,12 @@ public class SearchServiceImpl implements SearchService {
         for (SearchResult.Hit<PmsSearchSkuInfo, Void> hit : hits) {
             PmsSearchSkuInfo source = hit.source;
             Map<String, List<String>> highlight = hit.highlight;
-//            if (! highlight.get("skuName").isEmpty()) {
-//                String skuName = highlight.get("skuName").get(0);
-//                source.setSkuName(skuName);
-//            }
+
             pmsSearchSkuInfos.add(source);
+            if (highlight!=null) {
+                String skuName = highlight.get("skuName").get(0);
+                source.setSkuName(skuName);
+            }
         }
 
         System.out.println(pmsSearchSkuInfos.size());

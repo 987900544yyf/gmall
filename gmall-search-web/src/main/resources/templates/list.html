@@ -198,7 +198,7 @@
                       <div style="width:215px" th:each="skuLsInfo:${skuLsInfoList}" >
                             <p class="da">
                                 <a href="#" th:onclick="'javascript:item(\''+${skuLsInfo.id}+'\')'">
-<!--                                    <img th:src="${skuLsInfo.skuDefaultImg}"   src="/list/img/57d0d400nfd249af4.jpg" class="dim">-->
+                                    <img th:src="${skuLsInfo.skuDefulImg}"   src="/list/img/57d0d400nfd249af4.jpg" class="dim">
                                 </a>
                             </p>
 
@@ -454,8 +454,9 @@
     },function(){
         $(this).css({display:"none"})
     });
+
     //显示隐藏
-    var $li = $(".GM_nav_logo>div:gt(3)").hide();
+    var $li = $(".GM_nav_logo>div:gt(3)").show();
       $('.GM_show span').click(function(){
           if($li.is(':hidden')){
               $li.show();
